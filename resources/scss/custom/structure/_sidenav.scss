@@ -1,0 +1,707 @@
+//
+// menu.scss
+//
+
+//---------------------------------------------- Logo ---------------------------------------------//
+.logo-box {
+    position: sticky;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    //width: $menu-width;
+    transition: all 0.3s ease-in-out;
+    line-height: $topbar-height;
+
+
+    .logo-sm {
+        display: none;
+    }
+
+    .logo-lg {
+        display: inline-block;
+    }
+
+    .logo-dark {
+        display: inline-block;
+    }
+
+    .logo-light {
+        display: none;
+    }
+}
+
+
+//---------------------------------------------- Button SM Hover ---------------------------------------------//
+
+html[data-layout-mode="vertical"] {
+
+    .logo-box {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .button-sm-hover {
+        display: block;
+        position: absolute;
+        top: 25px;
+        font-size: 20px;
+        right: 10px;
+        line-height: 1;
+        z-index: 1;
+        border: 0;
+        color: $menu-item;
+        opacity: 0.25;
+        transition: opacity 0.3s ease-in-out;
+
+        &:hover {
+            color: $menu-item-hover;
+        }
+    }
+
+    .leftside-menu:hover {
+        .button-sm-hover {
+            opacity: 1;
+        }
+    }
+
+    .navbar-custom {
+        .logo-box {
+            display: none;
+        }
+    }
+}
+
+.button-sm-hover {
+    display: none;
+
+}
+
+//---------------------------------------------- Wrapper - Content ---------------------------------------------//
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    //overflow: hidden;
+}
+
+//Content Page
+.content-page {
+    margin-left: $menu-width;
+    min-height: 100vh;
+    position: relative;
+    padding: $topbar-height 12px 65px;
+    transition: all .3s ease-in-out;
+}
+
+///=============================== Leftbar Vertical   ====================================///
+
+.leftside-menu {
+    top: 0;
+    bottom: 0;
+    z-index: 1010;
+    position: fixed;
+    width: $menu-width;
+    background: $menu-bg;
+    min-width: $menu-width;
+    padding-bottom: 64px;
+    transition: all 0.3s ease-in-out;
+
+    //.h-100 {
+    //    height: calc(100% - 100px) !important;
+    //}
+}
+
+html:not([data-theme=dark]){
+    .leftside-menu{
+        box-shadow: $box-shadow;
+    }
+}
+
+
+.side-nav {
+    padding-left: 0;
+    list-style-type: none;
+
+    ul {
+        list-style-type: none;
+    }
+
+    .side-nav-item {
+        padding: 4px 10px;
+
+        >a[aria-expanded="true"] {
+            >span.menu-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        &.menuitem-active {
+            >a:not(.collapsed) {
+                >span.menu-arrow {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
+        &:hover {
+            .menu-pin {
+                opacity: 1;
+            }
+        }
+    }
+
+
+    .side-nav-link {
+        color: $menu-item;
+        display: block;
+        padding: 8px 20px;
+        font-size: 0.9375rem;
+        position: relative;
+        transition: $nav-link-transition;
+        list-style: none;
+        white-space: nowrap;
+        border-radius: $border-radius;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $menu-item-hover;
+            font-weight: $font-weight-medium;
+            text-decoration: none;
+        }
+
+        span:not(.icon) {
+            vertical-align: middle;
+        }
+
+        .icon {
+            width: 20px;
+            margin: 0 10px 0 0;
+            display: inline-block;
+            vertical-align: middle;
+            transition: all 0.15s ease-in-out;
+            @extend .ms-fill-0
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $menu-item-bg-hover !important;
+            color: $menu-item;
+
+            .icon {
+                @extend .ms-fill-1;
+            }
+        }
+    }
+
+    .menu-arrow {
+        transition: transform 0.15s;
+        position: absolute;
+        right: 24px;
+        display: inline-block;
+        font-family: "Material Symbols Outlined", serif;
+        text-rendering: auto;
+        line-height: 1.5rem;
+        font-size: 1.1rem;
+        transform: translate(0, 0);
+
+        &:before {
+            content: "\e5cc";
+        }
+    }
+
+    .menu-pin {
+        position: absolute;
+        right: 52px;
+        display: inline-block;
+        font-family: "Material Symbols Rounded", serif;
+        text-rendering: auto;
+        line-height: 1.5rem;
+        font-size: 19px;
+        transform: rotate(45deg);
+        opacity: 0;
+        transition: all 0.1s ease-in-out;
+        font-variation-settings: 'FILL' 0;
+
+        &:before {
+            content: "\f10d";
+        }
+
+        &:hover {
+            color: $primary;
+            font-variation-settings: 'FILL' 1;
+        }
+
+        &.active {
+            color: $primary;
+            font-weight: $font-weight-medium;
+        }
+    }
+
+    .pinned-tab {
+        .menu-pin {
+            color: $primary;
+            font-variation-settings: 'FILL' 1;
+
+            &:hover {
+                //color: $text-muted;
+                font-variation-settings: 'FILL' 0;
+            }
+
+        }
+    }
+
+    .badge {
+        margin-top: 3px;
+    }
+
+    .side-nav-title {
+        padding: 12px 30px;
+        letter-spacing: 0.05em;
+        pointer-events: none;
+        cursor: default;
+        font-size: 0.6875rem;
+        white-space: nowrap;
+        text-transform: uppercase;
+        opacity: 0.65;
+        color: $menu-item;
+        font-weight: $font-weight-semibold;
+    }
+
+    .menuitem-active {
+        .side-nav-link {
+            &.active {
+                .icon {
+                    @extend .ms-fill-1
+                }
+
+                &:not([data-bs-toggle]) {
+                    background-color: var(--#{$prefix}xsoft-primary) !important;
+                    color: $primary;
+                    font-weight: $font-weight-medium;
+                }
+
+                &[data-bs-toggle] {
+                    background-color: $menu-item-bg-hover !important;
+                }
+
+            }
+
+        }
+    }
+}
+
+
+// Sidebar Menu item Arrow
+*[dir="ltr"] {
+    .side-nav {
+        .side-nav-item {
+            .menu-arrow {
+                &:before {
+                    content: "\E5CB" !important;
+                }
+            }
+        }
+    }
+}
+
+// Multiple Menu
+.side-nav-second-level,
+.side-nav-third-level,
+.side-nav-forth-level {
+    padding-left: 0;
+    margin-top: 5px;
+
+    li {
+
+        a,
+        .side-nav-link {
+
+            border-radius: $border-radius;
+            padding: 8px 30px 8px 65px;
+            //margin-left: 65px;
+            color: $menu-item;
+            display: block;
+            position: relative;
+            transition: all 0.4s;
+            font-size: 0.89rem;
+
+            &::before {
+                content: "";
+                width: 5px;
+                height: 1px;
+                background-color: $menu-item;
+                position: absolute;
+                left: 48px;
+                top: 50%;
+                transition: all 0.4s ease-in-out;
+                opacity: 0.8;
+            }
+
+            &:hover,
+            &:focus {
+                background-color: $menu-item-bg-hover !important;
+                color: $menu-item;
+
+                .icon {
+                    @extend .ms-fill-1;
+                }
+            }
+
+            .menu-arrow {
+                line-height: 1.3rem;
+            }
+        }
+
+        &.active {
+            >a {
+                background-color: var(--#{$prefix}xsoft-primary) !important;
+                color: $primary;
+            }
+        }
+    }
+}
+
+.side-nav-third-level {
+    li {
+
+        a,
+        .side-nav-link {
+            padding: 8px 30px 8px 80px;
+        }
+    }
+}
+
+.side-nav-forth-level {
+    li {
+
+        a,
+        .side-nav-link {
+            padding: 8px 30px 8px 100px;
+        }
+    }
+}
+
+.side-nav-extra-item {
+    white-space: nowrap;
+    margin: 4px 10px;
+
+    .side-nav-link {
+        padding: 8px 20px;
+        border-radius: 0.25rem;
+        display: flex;
+        align-items: center;
+
+        @extend .bg-soft-bluish-purple;
+        @extend .text-bluish-purple;
+        font-weight: $font-weight-medium;
+
+        .text {
+            margin-left: 22px;
+        }
+    }
+}
+
+//  sm-hove Menu
+html[data-sidenav-size="sm-hover"] {
+
+
+    // Content Page
+    .content-page {
+        margin-left: $menu-width-hover;
+    }
+
+    .leftside-menu:not(:hover) {
+        width: $menu-width-hover;
+        min-width: $menu-width-hover;
+
+        .logo-box {
+            width: $menu-width-hover;
+            text-align: center;
+            padding-left: 0;
+
+            .logo-sm {
+                display: inline-block;
+            }
+
+            .logo-lg {
+                display: none;
+            }
+        }
+
+
+        .side-nav-title,
+        .help-box,
+        .button-sm-hover,
+        .leftbar-customer {
+            display: none;
+        }
+
+        .side-nav-item {
+            .side-nav-link {
+                padding: 15px 0;
+                line-height: 0 !important;
+                text-align: center;
+
+                span:not(.icon) {
+                    display: none;
+                }
+
+                i,
+                .icon {
+                    font-size: 1.25rem;
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .side-nav-second-level,
+        .side-nav-third-level,
+        .side-nav-forth-level {
+            display: none;
+        }
+    }
+
+    .leftside-menu {
+        min-width: $menu-width;
+
+        .buy-now{
+            display: none !important;
+        }
+    }
+
+    .leftside-menu:not(:hover) {
+        .side-nav-extra-item {
+
+            //margin-bottom: 8px;
+            .side-nav-link {
+                padding: 12px;
+                justify-content: center;
+
+                .text {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+//  Detached Menu
+html[data-layout-mode="detached"] {
+    .content-page {
+        position: relative;
+        padding: $topbar-height 0px 65px 12px;
+    }
+
+    .wrapper {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+
+    .leftside-menu {
+        margin-top: calc(#{$menu-width-hover} + #{$spacer});
+        padding-top: 0 !important;
+        bottom: $spacer;
+        border-radius: 5px;
+        z-index: 10;
+
+        .logo-box {
+            display: none;
+        }
+    }
+
+}
+
+
+
+
+// Sidenav Dark  and Brand
+html[data-sidenav-color="dark"] {
+    .leftside-menu {
+        .logo-box {
+            .logo-light {
+                display: inline-block;
+            }
+
+            .logo-dark {
+                display: none;
+            }
+        }
+    }
+}
+
+html[data-layout-mode=detached] {
+    .leftside-menu {
+        .logo-box {
+            display: none;
+        }
+    }
+}
+
+
+
+
+///=============================== Full Menu Buttons ====================================///
+
+.leftbar-hide-enable {
+    display: none;
+    left: $menu-width;
+    position: absolute;
+    padding: 12px 10px 12px 5px;
+    box-shadow: 3px 5px 5px 0px var(--#{$prefix}box-shadow-color);
+    cursor: pointer;
+    top: 150px;
+    color: $menu-item;
+    border-radius: 0 50px 50px 0;
+    opacity: 0.6;
+    transition: all .3s cubic-bezier(.4, 0, .2, 1);
+    background-color: $card-bg;
+
+    &:hover {
+        opacity: 1;
+        padding-left: 20px;
+        padding-right: 15px;
+    }
+
+}
+
+.topbar-hide-enable {
+    display: none;
+    position: absolute;
+    right: 250px;
+    z-index: 1090;
+    top: 70px;
+    color: $menu-item;
+    transition: all .3s cubic-bezier(.4, 0, .2, 1);
+    padding: 5px 12px 8px 12px;
+    box-shadow: 3px 5px 5px 0px var(--#{$prefix}box-shadow-color);
+    cursor: pointer;
+    background-color: $card-bg;
+    border-radius: 0px 0px 50px 50px;
+    opacity: 0.6;
+
+    &:hover {
+        opacity: 1;
+        padding-top: 15px;
+        padding-bottom: 12px;
+    }
+}
+
+html[data-layout-mode="full"] {
+
+    .leftbar-hide-enable,
+    .topbar-hide-enable {
+        display: block;
+    }
+
+    .leftside-menu {
+        left: -$menu-width;
+        transition: all .3s ease-in-out;
+    }
+
+    .content-page {
+        margin-left: 0;
+        padding: 12px 12px 65px;
+    }
+
+    .wrapper {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+
+    &[show-leftbar] {
+        .leftside-menu {
+            margin-top: 0;
+            left: 0;
+            bottom: 0;
+        }
+    }
+
+    &:not([show-leftbar]) {
+        .leftbar-hide-enable {
+            opacity: 1;
+            padding-left: 15px;
+            padding-right: 15px;
+            background-color: $menu-bg;
+
+            span {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &:not([show-topbar]) {
+        .topbar-hide-enable {
+            opacity: 1;
+            background-color: $topbar-bg;
+            padding-top: 15px;
+            padding-bottom: 12px;
+
+            span {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    //Topbar
+    .navbar-custom {
+        top: -71px;
+        transition: all .3s ease-out;
+    }
+
+    &[show-topbar] {
+        .navbar-custom {
+            top: 0;
+        }
+    }
+
+    .button-toggle-menu {
+        display: none;
+    }
+}
+
+// Break Point
+@include media-breakpoint-down(md) {
+
+    .leftside-menu {
+        box-shadow: $box-shadow;
+        margin-left: -100%;
+        z-index: 10 !important;
+    }
+
+    .sidebar-enable {
+        .leftside-menu {
+            margin-left: 0;
+
+            z-index: 1045 !important;
+        }
+    }
+
+    .content-page {
+        margin-left: 0 !important;
+        padding: 65px 10px 65px;
+    }
+
+    html[data-layout-mode=vertical] {
+        .navbar-custom{
+            .logo-box  {
+                display: inline-block;
+            }
+        }
+    }
+
+
+}
+
+// Break Point
+@include media-breakpoint-down(lg) {
+    .logo {
+        .logo-lg {
+            display: none;
+        }
+
+        .logo-sm {
+            display: inline-block;
+        }
+    }
+}

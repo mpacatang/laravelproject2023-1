@@ -1,0 +1,49 @@
+// Error text with shadow
+
+
+#customer-layout {
+
+    .content-page {
+        margin-top: 24px;
+
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 70px 8px 0px 8px!important;
+    }
+}
+
+#customer-home {
+
+    .collapsed span {
+        visibility: hidden;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    #customer-layout {
+        .content-page {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    #customer-layout {
+        .content-page {
+            margin-left: 48px;
+            margin-right: 48px;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    #customer-layout {
+        .content-page {
+            margin-left: 120px;
+            margin-right: 120px;
+        }
+    }
+}
+
+

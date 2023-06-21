@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        // this enables stricter inference for data properties on `this`
+        "strict": false,
+        "jsx": "preserve",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "noImplicitThis": false,
+        "importHelpers": true,
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "paths": {
+            "@js/*": ["js/*"],
+            "@docs/*": ["js/pages/docs/*"],
+        }
+    },
+    "include": [
+        "js/**/*"
+    ]
+}

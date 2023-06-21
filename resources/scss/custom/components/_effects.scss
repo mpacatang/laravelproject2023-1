@@ -1,0 +1,78 @@
+//
+// loading effect.scss
+//
+
+@mixin generate-hover-effect-rounded($inset, $background-color){
+    position: relative;
+    &::before {
+        content: "";
+        transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: scale(0);
+        opacity: 0;
+        position: absolute;
+        inset: $inset;
+        border-radius: 4px;
+        background-color: $background-color;
+    }
+
+    &.show::before,
+    &:hover::before {
+        transform: scale(1);
+        opacity: 1;
+
+    }
+}
+
+@mixin generate-hover-effect-circular($inset, $background-color){
+    position: relative;
+    &::before {
+        content: "";
+        transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: scale(0);
+        opacity: 0;
+        position: absolute;
+        inset: $inset;
+        border-radius: 50%;
+        background-color: $background-color;
+    }
+
+    &.show::before,
+    &:hover::before {
+        transform: scale(1);
+        opacity: 1;
+
+    }
+}
+
+.hover-effect-circular {
+    @include generate-hover-effect-circular(-2px, rgb(128 128 128 / 10%));
+}
+
+.hover-effect-circular-lg {
+    @include generate-hover-effect-circular(-8px, rgb(128 128 128 / 10%));
+}
+
+.hover-effect-rounded {
+    @include generate-hover-effect-rounded(-2px, rgb(128 128 128 / 10%));
+}
+
+.hover-effect-rounded-lg {
+    @include generate-hover-effect-rounded(-8px, rgb(128 128 128 / 10%));
+}
+
+
+
+#custom-offcanvas-backdrop{
+    @extend .offcanvas-backdrop;
+    opacity: 0;
+    transition: all 0.15s ease-in-out;
+    //z-index: 5;
+    display: none;
+}
+
+html.show-backdrop{
+    #custom-offcanvas-backdrop{
+        display: block;
+        opacity: 0.5;
+    }
+}

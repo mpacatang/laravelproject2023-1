@@ -1,0 +1,159 @@
+//
+// mixins.scss
+//
+
+
+// =========================  Lighten badge (soft) ========================= //
+
+@mixin badge-variant-light($bg) {
+    --#{$prefix}badge-color: #{$bg} !important;
+    background-color: rgba($bg, 0.18);
+}
+
+@each $color,
+$value in $theme-colors {
+    .badge-#{$color}-lighten {
+        @include badge-variant-light($value);
+
+        &[href] {
+            color: $value;
+            text-decoration: none;
+            background-color: rgba($value, 0.18);
+        }
+
+        &[href] {
+
+            &:hover,
+            &:focus {
+                color: $value;
+                text-decoration: none;
+                background-color: rgba($value, 0.4);
+            }
+        }
+    }
+}
+
+
+
+// =========================  Outline badge ========================= //
+
+@mixin badge-variant-outline($bg) {
+    --#{$prefix}badge-color: #{$bg};
+    border: 1px solid $bg;
+    background-color: transparent;
+}
+
+
+@each $color,
+$value in $theme-colors {
+    .badge-outline-#{$color} {
+        @include badge-variant-outline($value);
+
+        &[href] {
+            color: $value;
+            text-decoration: none;
+            background-color: rgba($value, 0.2);
+        }
+
+        &[href] {
+
+            &:hover,
+            &:focus {
+                color: $value;
+                text-decoration: none;
+                background-color: rgba($value, 0.2);
+            }
+        }
+    }
+}
+
+
+
+// =========================  Tooltip ========================= //
+
+
+@each $color, $value in $theme-colors {
+    .#{$color}-tooltip {
+        --#{$prefix}tooltip-bg: var(--#{$prefix}#{$color}) !important;
+    }
+}
+
+
+// =========================  Popover ========================= //
+@each $color, $value in $theme-colors {
+    .#{$color}-popover {
+        --#{$prefix}popover-max-width: 200px !important;
+        --#{$prefix}popover-border-color: var(--#{$prefix}#{$color}) !important;
+        --#{$prefix}popover-header-bg: var(--#{$prefix}#{$color}) !important;
+        --#{$prefix}popover-header-color: var(--#{$prefix}white) !important;
+        --#{$prefix}popover-body-padding-x: 1rem !important;
+        --#{$prefix}popover-body-padding-y: .5rem !important;
+    }
+}
+
+
+@each $color,
+$value in $theme-colors {
+    .bg-soft-#{$color} {
+        background-color: #{rgba($value, 0.18)};
+        color: $value;
+    }
+    .bg-xsoft-#{$color} {
+        background-color: #{rgba($value, 0.09)};
+        color: $value;
+    }
+
+    .text-soft-#{$color} {
+        color: #{rgba($value, 0.18)};
+    }
+    .text-xsoft-#{$color} {
+        color: #{rgba($value, 0.09)};
+
+    }
+
+    .border-soft-#{$color} {
+        border-color: #{rgba($value, 0.18)} !important;
+    }
+
+    //--#{$prefix}soft-#{$color}: #{$value};
+
+}
+
+
+:root {
+    @each $color, $value in $theme-colors {
+        --#{$prefix}soft-#{$color}: #{rgba($value, 0.18)};
+    }
+    @each $color, $value in $theme-colors {
+        --#{$prefix}xsoft-#{$color}: #{rgba($value, 0.09)};
+    }
+}
+
+//@each $color, $value in $grays {
+//}
+
+// =========================  Dark Themes ========================= //
+
+html[data-theme="dark"] {
+
+    .bg-light {
+        background-color: var(--#{$prefix}gray-300) !important;
+    }
+
+    .bg-secondary {
+        background-color: var(--#{$prefix}gray-700) !important;
+    }
+
+
+    .text-body {
+        color: var(--#{$prefix}gray-500) !important;
+    }
+
+    .text-light {
+        color: var(--#{$prefix}gray-300) !important;
+    }
+
+    .text-secondary {
+        color: var(--#{$prefix}gray-700) !important;
+    }
+}

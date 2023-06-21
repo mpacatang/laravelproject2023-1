@@ -1,0 +1,33 @@
+//
+// _right-sidebar.scss
+//
+
+#theme-settings-offcanvas {
+
+
+    img {
+        filter: grayscale(0.7);
+        transition: all 0.5s ease-in-out;
+
+        &.active {
+            filter: none;
+        }
+    }
+
+    #table-filter {
+        img {
+            filter: none;
+            transition: all 0.3s ease-in-out;
+
+            &.active {
+                filter: opacity(0.7) drop-shadow(0 0 0 green)
+            }
+        }
+    }
+
+    .rightbar-header{
+        min-height: $topbar-height;
+    }
+
+
+}

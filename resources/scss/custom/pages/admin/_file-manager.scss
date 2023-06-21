@@ -1,0 +1,33 @@
+// Error text with shadow
+
+#file-manager{
+    .folder-card{
+        transition: all 0.2s ease-in-out;
+        border: 1px solid transparent;
+        cursor: pointer;
+    }
+
+    .file-card{
+        transition: all 0.2s ease-in-out;
+        border: 1px solid transparent;
+
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .file-info{
+        width: 450px;
+        transition: margin-right 0.35s ease-in-out;
+        margin-right: -450px;
+        //box-shadow: $box-shadow;
+        border-left: 1px solid $border-color;
+
+        &.show{
+            margin-right: 0;
+        }
+    }
+}
+

@@ -1,0 +1,164 @@
+//
+// custom-variables.scss
+//
+
+
+
+// Left Sidebar
+$menu-width:                     260px;
+$menu-width-md:                  160px;
+$menu-width-sm:                  70px;
+$menu-width-hover:               70px;
+
+
+// Menu
+$menu-bg:                           var(--#{$prefix}menu-bg);
+$menu-item:                         var(--#{$prefix}menu-item);
+$menu-item-hover:                   var(--#{$prefix}menu-item-hover);
+$menu-item-bg-hover:                   var(--#{$prefix}menu-item-bg-hover);
+$menu-item-active:                  var(--#{$prefix}menu-item-active);
+
+// Topbar
+$topbar-height:                     70px;
+$topbar-bg:                         var(--#{$prefix}bg-topbar);
+$topbar-item:                       var(--#{$prefix}topbar-item);
+$topbar-item-hover:                 var(--#{$prefix}topbar-item-hover);
+$topbar-search-bg:                  var(--#{$prefix}topbar-search-bg);
+
+
+
+// Light Variable
+:root,
+[data-theme="light"] {
+    --#{$prefix}card-custom-bg: #{$white};
+    //--#{$prefix}input-bg: #{$white};
+
+
+    @each $color, $value in $grays {
+        --#{$prefix}gray-#{$color}-rgb:  #{to-rgb($value)};
+    }
+
+}
+
+
+// Dark Variable
+html[data-theme="dark"], [data-theme="dark"] {
+
+
+    // Dark Body Background and Text Color
+    --#{$prefix}body-bg: #1a1d21;
+    --#{$prefix}body-color: #d0d5dc;
+
+    // Bootstrap variable
+    // Color system - Dark Mode only
+    $gray-100: #1a1d21;
+    $gray-150: #1e2125;
+    $gray-200: #212529;
+    $gray-300: #353a3e;
+    $gray-400: #647079;
+    $gray-500: #7f878d;
+    $gray-600: #959ea6;
+    $gray-700: #dee2e6;
+    $gray-800: #f7f7f7;
+    $gray-900: #f3f7f9;
+
+    $grays: (
+        "100": $gray-100,
+        "150": $gray-150,
+        "200": $gray-200,
+        "300": $gray-300,
+        "400": $gray-400,
+        "500": $gray-500,
+        "600": $gray-600,
+        "700": $gray-700,
+        "800": $gray-800,
+        "900": $gray-900
+    );
+
+    // Prefix gray variables
+    @each $color, $value in $grays {
+        --#{$prefix}gray-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $grays {
+        --#{$prefix}gray-#{$color}-rgb:  #{to-rgb($value)};
+    }
+
+
+    // theme-color
+    --#{$prefix}light:                     #{$gray-300};
+    --#{$prefix}light-rgb:                 #{to-rgb($gray-100)};
+    --#{$prefix}dark:                      #{$gray-900};
+    --#{$prefix}dark-rgb:                  #{to-rgb($gray-900)};
+
+    --#{$prefix}card-custom-bg:             #{$gray-200};
+    --#{$prefix}card-bg:             #{$gray-200};
+    //--#{$prefix}input-bg:                   var(--#{$prefix}body-bg);
+}
+
+
+
+
+// Menu Light
+html[data-sidenav-color="light"] {
+    --#{$prefix}menu-bg: #{$white};
+    --#{$prefix}menu-item: #{$gray-700};
+    --#{$prefix}menu-item-hover: #{$primary};
+    --#{$prefix}menu-item-active: #{$primary};
+    --#{$prefix}menu-item-bg-hover: #f5f7f8;
+}
+
+// Menu Dark
+html[data-sidenav-color="dark"] {
+    --#{$prefix}menu-bg: #212529;
+    --#{$prefix}menu-item: #878a99;
+    --#{$prefix}menu-item-hover: #f6f6f6;
+    --#{$prefix}menu-item-active: #fff;
+    --#{$prefix}menu-item-bg-hover: #1e2125;
+}
+
+// Topbar Light
+html[data-topbar-color="light"] {
+    --#{$prefix}bg-topbar: #{$white};
+    --#{$prefix}topbar-item: #{$gray-700};
+    --#{$prefix}topbar-item-hover: #{$primary};
+    --#{$prefix}topbar-search-bg: #f8f8f8;
+}
+
+// Dark Topbar
+html[data-topbar-color="dark"] {
+    --#{$prefix}bg-topbar: #212529;
+    --#{$prefix}topbar-item: #878a99;
+    --#{$prefix}topbar-item-hover: #f6f6f6;
+    --#{$prefix}topbar-search-bg: #181a1a;
+}
+
+
+$utilities: (
+    "font": (
+        property: font-size,
+        responsive: true,
+        class:'font',
+        values: (
+            8: 8px,
+            9: 9px,
+            10: 10px,
+            11: 11px,
+            12: 12px,
+            13: 13px,
+            14: 14px,
+            15: 15px,
+            16: 16px,
+            17: 17px,
+            18: 18px,
+            19: 19px,
+            20: 20px,
+            21: 21px,
+            22: 22px,
+            23: 23px,
+            24: 24px,
+            36: 36px,
+            48: 48px,
+        )
+    )
+);

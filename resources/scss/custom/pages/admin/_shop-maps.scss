@@ -1,0 +1,9 @@
+// Error text with shadow
+
+#shops-on-map{
+    .swiper-slide-active{
+        .card{
+           box-shadow: $box-shadow;
+        }
+    }
+}

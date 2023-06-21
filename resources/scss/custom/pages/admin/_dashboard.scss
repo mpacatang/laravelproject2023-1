@@ -1,0 +1,51 @@
+
+#admin-dashboard, #seller-dashboard, #admin-report, #seller-report{
+
+    .data-card{
+        cursor: pointer;
+
+        .data-icon{
+            @extend .ms-fill-0;
+            @extend .transition-1;
+        }
+
+        .action-text{
+            color: var(--#{$prefix}text-xmuted);
+            border-bottom: 1px dashed transparent;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .arrow{
+            margin-left: 2px;
+            opacity: 0;
+            color: $primary;
+            transition: all 0.2s ease-in-out;
+        }
+
+        :hover{
+            .arrow{
+                opacity: 1;
+            }
+
+            .action-text{
+                color: $primary;
+                border-bottom-color: $primary;
+            }
+
+            .data-icon{
+                @extend .ms-fill-1
+            }
+
+        }
+    }
+
+    .order-icon {
+        transition: transform 0.3s;
+        transform: translate(0, 0);
+
+        &.down {
+            transform: rotate(180deg);
+        }
+    }
+}
+

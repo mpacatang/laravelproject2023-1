@@ -1,0 +1,32 @@
+// //
+// // order.scss
+// //
+
+
+.order_status_cancel_by_customer,
+.order_status_cancel_by_shop {
+    @extend .bg-xsoft-red
+}
+
+.order_status_reject,
+.order_status_resubmit,
+.order_status_reject_for_delivery {
+    @extend .bg-xsoft-orange
+}
+
+.order_status_place_order,
+.order_status_payment_done,
+.order_status_accepted,
+.order_status_waiting,
+.order_status_assign_delivery_boy,
+.order_status_accept_for_delivery,
+.order_status_order_ready,
+.order_status_on_the_way {
+    @extend .bg-xsoft-teal
+}
+
+
+.order_status_reviewed,
+.order_status_delivered {
+    @extend .bg-xsoft-green
+}

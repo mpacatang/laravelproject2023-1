@@ -1,0 +1,71 @@
+//
+// authentication.scss
+//
+
+.auth-wrapper {
+    display: flex;
+    background: #f4f4ff;
+    max-width: 100%;
+    justify-content: center;
+}
+
+.auth-image-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-content-wrapper {
+    margin: 40px;
+    min-height: calc(100vh - 80px);
+}
+
+.auth-content {
+    z-index: 2;
+    border-radius: 8px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    min-width: 100%;
+    background: white;
+    position: relative;
+    max-width: 560px;
+    box-shadow: -4px 4px 7px 0px #efefff;
+    transition: box-shadow .5s, transform .5s;
+
+    .logo {
+        .dark {
+            display: none;
+        }
+    }
+
+
+    &:hover {
+        box-shadow: -6px 6px 18px 1px #e9e9ff;
+    }
+}
+
+
+@include media-breakpoint-down(xxl) {
+
+    .auth-image-wrapper {
+        display: none;
+
+    }
+}
+
+
+html[data-theme='dark'] {
+    .auth-content {
+        .logo {
+            .light {
+                display: none;
+            }
+
+            .dark {
+                display: block;
+            }
+        }
+    }
+}

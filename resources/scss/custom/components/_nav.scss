@@ -1,0 +1,220 @@
+//
+// tabs.scss
+//
+
+.nav-tabs,
+.nav-pills {
+    > li {
+        > a {
+            color: var(--#{$prefix}gray-700);
+            font-weight: $font-weight-semibold;
+        }
+    }
+}
+
+.nav-pills {
+    > a {
+        color: var(--#{$prefix}gray-700);
+        font-weight: $font-weight-semibold;
+    }
+}
+
+
+// nav-bordered
+
+.nav-tabs.nav-bordered {
+    border-bottom: 2px solid var(--#{$prefix}gray-300);
+
+    .nav-item {
+        margin-bottom: -1px;
+    }
+
+    li {
+        a {
+            border: 0;
+            padding: 0.625rem 1.25rem;
+        }
+
+        a.active {
+            border-bottom: 2px solid $primary;
+        }
+    }
+}
+
+.nav-tabs.nav-custom-bordered {
+    position: relative;
+    border-bottom: 0 solid var(--#{$prefix}gray-300);
+
+
+    .nav-item {
+        margin-bottom: 0;
+
+        .nav-link::after {
+            content: "";
+            background-color: var(--#{$prefix}gray-300);
+            height: 1px;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            //right: 0;
+            bottom: 0;
+            transition: all 250ms ease 0s;
+            transform: scale(0);
+        }
+
+        .nav-link.active::after {
+            transform: scale(1);
+            background-color: $primary
+        }
+
+    }
+
+
+    li {
+        border-bottom: 1px solid var(--#{$prefix}gray-300);
+
+        a {
+            border: 0;
+            padding: 0.625rem 1.25rem;
+        }
+
+        a.active {
+            background-color: var(--#{$prefix}soft-primary);
+            //color: $primary;
+            //border-bottom: 1px solid $primary;
+        }
+    }
+}
+
+.nav-tabs-custom {
+    border-bottom: 0 solid var(--#{$prefix}gray-300);
+
+    --nav-active: var(--#{$prefix}green);
+    --nav-active-bg: var(--#{$prefix}xsoft-green);
+
+    &.color-teal{
+        --nav-active: var(--#{$prefix}teal);
+        --nav-active-bg: var(--#{$prefix}xsoft-teal);
+    }
+
+
+    .nav-item {
+        margin-bottom: 0;
+
+        position: relative;
+        .nav-link {
+            @extend .px-3;
+            border: none;
+            font-weight: $font-weight-medium;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                color: var(--nav-active);
+            }
+
+            &.active {
+                color: var(--nav-active);
+                background-color: var(--nav-active-bg);
+
+                &:after {
+                    transform: scale(1);
+                }
+            }
+
+            .counter {
+                @extend .bg-danger;
+                color: white;
+
+                border-radius: 50%;
+                margin-left: 6px;
+
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 15px;
+                width: 15px;
+                font-size: 10px;
+
+            }
+        }
+    }
+
+    &.border-none{
+        .nav-link{
+            border-radius: 4px;
+        }
+    }
+
+    &:not(.border-none){
+        .nav-item{
+            border-bottom: 1px solid var(--#{$prefix}gray-300);
+
+            &.active {
+                border-bottom: 1px solid var(--nav-active);
+            }
+
+            &::after {
+                content: "";
+                background: var(--nav-active);
+                height: 1px;
+                position: absolute;
+                width: 100%;
+                left: 0;
+                bottom: -1px;
+                transition: all 250ms ease 0s;
+                transform: scale(0);
+            }
+
+        }
+    }
+
+
+}
+
+
+.nav-tabs-custom-icons {
+    @extend .nav-tabs-custom;
+    .nav-link {
+        .icon {
+            @extend .ms-fill-0;
+            @extend .transition-1;
+
+        }
+        &:hover,
+        &.active {
+            .icon {
+                @extend .ms-fill-1;
+            }
+        }
+    }
+}
+
+
+// ========================= nav-tabs ========================= //
+
+.arrow-navtabs {
+    .nav-item {
+        .nav-link {
+            position: relative;
+            text-align: center;
+
+            &:before {
+                content: "";
+                position: absolute;
+                border: 6px solid transparent;
+                bottom: -12px;
+                left: 50%;
+                transform: translateX(-50%);
+                @include transition($nav-link-transition);
+            }
+
+            &.active {
+                &:before {
+                    border-top-color: $primary;
+                }
+            }
+        }
+    }
+}

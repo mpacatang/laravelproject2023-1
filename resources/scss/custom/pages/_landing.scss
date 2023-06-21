@@ -1,0 +1,532 @@
+#landing, #preview {
+
+    overflow-x: hidden;
+    /********************TOP-BAR********************/
+
+
+    /**********************NAVBAR***********************/
+
+    .navbar {
+        transition: all 0.5s ease;
+        padding: 0;
+        margin-top: 0;
+        background-color: #f4f4ff;
+
+        .navbar-nav {
+            .nav-link {
+                color: $dark;
+                font-size: 13px;
+                background-color: transparent;
+                padding: 23px 18px;
+                text-transform: uppercase;
+                transition: all 0.3s ease;
+                position: relative;
+                font-weight: 600;
+
+                &:hover,
+                &:active,
+                &.active {
+                    color: $primary;
+                }
+            }
+        }
+
+
+        .header-item {
+            color: $dark;
+            transition: all 0.5s ease;
+        }
+    }
+
+
+    //nav-sticy
+    .nav-sticky {
+        &.navbar {
+            background: $white;
+            margin-top: 0;
+            box-shadow: 0 3px 10px 0 rgba($dark, 0.08);
+        }
+
+        .header-item {
+            color: $dark;
+        }
+    }
+
+    .hero-container {
+        background-color: #f4f4ff;
+    }
+
+    section {
+        padding: 100px 0;
+        background: white;
+
+        &.odd {
+            background-color: #fafaff;
+        }
+
+        .customer-title {
+            @extend .text-teal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: $font-weight-semibold;
+            position: relative;
+
+            &:before {
+                font-family: "Material Symbols Rounded", serif;
+                content: "\e7fd";
+                font-size: 300px;
+                position: absolute;
+                font-weight: 400 !important;
+                color: rgba($teal, 0.03) !important;
+            }
+        }
+
+        .delivery-boy-title {
+            @extend .text-green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: $font-weight-semibold;
+            position: relative;
+
+            &:before {
+                font-family: "Material Symbols Rounded", serif;
+                content: "\e558";
+                font-size: 300px;
+                position: absolute;
+                font-weight: 400 !important;
+                color: rgba($green, 0.05) !important;
+            }
+        }
+
+        .seller-title {
+            @extend .text-purple;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: $font-weight-semibold;
+            position: relative;
+
+            &:before {
+                font-family: "Material Symbols Rounded", serif;
+                content: "\ea12";
+                font-size: 300px;
+                position: absolute;
+                font-weight: 400 !important;
+                color: rgba($purple, 0.03) !important;
+            }
+        }
+
+
+        .feature-title {
+            @extend .text-teal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: $font-weight-semibold;
+            position: relative;
+
+            &:before {
+                font-family: "Material Symbols Rounded", serif;
+                content: "\e7af";
+                font-size: 180px;
+                position: absolute;
+                font-weight: 400 !important;
+                color: rgba($teal, 0.03) !important;
+            }
+        }
+
+        .technology-title {
+            @extend .text-purple;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: $font-weight-semibold;
+            position: relative;
+
+            &:before {
+                font-family: "Material Symbols Rounded", serif;
+                content: "\e86f";
+                font-size: 180px;
+                position: absolute;
+                font-weight: 400 !important;
+                color: rgba($purple, 0.07) !important;
+            }
+        }
+
+        .installation-title {
+            @extend .text-success;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: $font-weight-semibold;
+            position: relative;
+
+            &:before {
+                font-family: "Material Symbols Rounded", serif;
+                content: "\f10b";
+                font-size: 180px;
+                position: absolute;
+                font-weight: 400 !important;
+                color: rgba($success, 0.04) !important;
+            }
+        }
+
+        .shop-plan {
+            @extend .border, .rounded-lg, .p-3;
+            cursor: pointer;
+
+            .title {
+                @extend .text-bluish-purple, .text-center;
+                font-weight: $font-weight-semibold;
+                text-transform: uppercase;
+                letter-spacing: 0.1px;
+            }
+
+            .price {
+                @extend .mt-3;
+                text-align: center;
+                font-weight: $font-weight-semibold;
+
+            }
+
+            .feature {
+                display: flex;
+                align-items: center;
+                font-weight: $font-weight-medium;
+                margin-bottom: 8px;
+            }
+
+            &:hover {
+                @extend .shadow;
+            }
+
+        }
+
+        .installation-plan {
+            @extend .border, .rounded-lg, .p-3;
+            cursor: pointer;
+
+            .title {
+                @extend .text-bluish-purple, .text-center;
+                font-weight: $font-weight-semibold;
+                text-transform: uppercase;
+                letter-spacing: 0.1px;
+            }
+
+            .price {
+                @extend .mt-3;
+                text-align: center;
+                font-weight: $font-weight-semibold;
+
+            }
+
+            .feature {
+                display: flex;
+                align-items: start;
+                margin-bottom: 8px;
+                font-size: 13.5px;
+
+                .icon{
+                    margin-right: 12px;
+                    margin-top: 2px;
+                }
+            }
+
+            &:hover {
+                @extend .shadow;
+            }
+
+        }
+
+
+        .counter {
+            .customer, .order, .shop, .delivery-boy {
+                &:before {
+                    margin-left: 12px;
+                    margin-top: -30px;
+                    font-family: "Material Symbols Rounded", serif;
+                    align-items: center;
+                    display: flex;
+                    line-height: 0;
+                    font-size: 80px;
+                    position: absolute;
+                    font-weight: 400 !important;
+
+                }
+            }
+
+            .customer {
+                &:before {
+                    content: "\e7fd";
+                    color: rgba($primary, 0.07) !important;
+                }
+            }
+
+            .order {
+                &:before {
+                    content: "\f1cc";
+                    color: rgba($green, 0.07) !important;
+                }
+            }
+
+            .shop {
+                &:before {
+                    content: "\ea12";
+                    color: rgba($teal, 0.07) !important;
+
+                }
+
+
+            }
+
+            .delivery-boy {
+                &:before {
+                    content: "\e558";
+                    color: rgba($rose, 0.07) !important;
+                }
+            }
+        }
+
+
+        .section-title {
+            font-weight: $font-weight-medium;
+            letter-spacing: 0.2px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+    }
+
+
+    //---Preview
+    .feature-card {
+        @extend .border, .rounded, .mb-5;
+        padding: 24px;
+        height: 192px;
+        cursor: pointer;
+        @extend .transition-1;
+
+
+        .icon-wrapper {
+            position: absolute;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            .icon {
+                padding: 12px;
+                border-radius: 50%;
+
+            }
+
+            span {
+                @extend .ms-fill-0, .transition-1;
+            }
+        }
+
+        .title {
+            text-align: center;
+            font-size: 18px;
+
+            font-weight: $font-weight-medium;
+            margin-top: 12px;
+        }
+
+        .desc {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            @extend .shadow;
+
+            .icon {
+                span {
+                    @extend .ms-fill-1
+                }
+            }
+        }
+    }
+
+
+    .scroll-down-mouse {
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .mouse {
+        background: #5671f0 linear-gradient(transparent 0%, transparent 50%, white 50%, white 100%);
+        position: relative;
+        width: 38px;
+        height: 65px;
+        margin: 0 auto;
+        border-radius: 6rem;
+        background-size: 100% 200%;
+        animation: mouseColorSlide 7s linear infinite, mouseBorder 7s ease-out infinite;
+    }
+
+    .mouse:before {
+        width: 34px;
+        height: 61px;
+        background-color: #e6f1ff;
+        border-radius: 6rem;
+    }
+
+    .mouse:before, .mouse:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    .mouse:after {
+        background-color: #5671f0;
+        width: 0.375rem;
+        height: 0.375rem;
+        border-radius: 100%;
+        animation: mouseTrackBall 7s linear infinite;
+    }
+
+    @keyframes mouseColorSlide {
+        0% {
+            background-position: 0 100%;
+        }
+        20% {
+            background-position: 0 0;
+        }
+        21% {
+            background-color: #6982f8;
+        }
+        29.99% {
+            background-color: white;
+            background-position: 0 0;
+        }
+        30% {
+            background-color: #6075dc;
+            background-position: 0 100%;
+        }
+        50% {
+            background-position: 0 0;
+        }
+        51% {
+            background-color: #435ac4;
+        }
+        59% {
+            background-color: white;
+            background-position: 0 0;
+        }
+        60% {
+            background-color: #3e5ae0;
+            background-position: 0 100%;
+        }
+        80% {
+            background-position: 0 0;
+        }
+        81% {
+            background-color: #5670f3;
+        }
+        90%, 100% {
+            background-color: white;
+        }
+    }
+
+    @keyframes mouseTrackBall {
+        0% {
+            opacity: 1;
+            transform: scale(1) translateY(-20px);
+        }
+        6% {
+            opacity: 1;
+            transform: scale(0.9) translateY(5px);
+        }
+        14% {
+            opacity: 0;
+            transform: scale(0.4) translateY(40px);
+        }
+        15%, 19% {
+            opacity: 0;
+            transform: scale(0.4) translateY(-20px);
+        }
+        28%, 29.99% {
+            opacity: 1;
+            transform: scale(1) translateY(-20px);
+        }
+        30% {
+            opacity: 1;
+            transform: scale(1) translateY(-20px);
+        }
+        36% {
+            opacity: 1;
+            transform: scale(0.9) translateY(5px);
+        }
+        44% {
+            opacity: 0;
+            transform: scale(0.4) translateY(40px);
+        }
+        45%, 49% {
+            opacity: 0;
+            transform: scale(0.4) translateY(-20px);
+        }
+        58%, 59.99% {
+            opacity: 1;
+            transform: scale(1) translateY(-20px);
+        }
+        60% {
+            opacity: 1;
+            transform: scale(1) translateY(-20px);
+        }
+        66% {
+            opacity: 1;
+            transform: scale(0.9) translateY(5px);
+        }
+        74% {
+            opacity: 0;
+            transform: scale(0.4) translateY(40px);
+        }
+        75%, 79% {
+            opacity: 0;
+            transform: scale(0.4) translateY(-20px);
+        }
+        88%, 100% {
+            opacity: 1;
+            transform: scale(1) translateY(-20px);
+        }
+    }
+
+    @keyframes mouseBorder {
+        0%, 30%, 60%, 90% {
+            transform: translateY(0);
+        }
+        20%, 50%, 80% {
+            transform: translateY(8px);
+        }
+    }
+
+    .back-to-top {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $bluish-purple;
+        border-color: transparent;
+        border-radius: 5px;
+        color: #fff;
+        transition: all .5s ease;
+        z-index: 99;
+    }
+}

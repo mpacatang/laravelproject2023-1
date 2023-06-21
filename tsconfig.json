@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        // this enables stricter inference for data properties on `this`
+        "strict": false,
+        "jsx": "preserve",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "noImplicitThis": false,
+        "importHelpers": true,
+        "allowSyntheticDefaultImports": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+    },
+    "include": [
+        "resources/js/**/*"
+    ]
+}

@@ -1,0 +1,123 @@
+//
+// apexcharts.scss
+//
+
+.apex-charts {
+    min-height: 10px !important;
+
+    text {
+        font-family: $font-family-base  !important;
+        font-weight: $font-weight-medium;
+        fill: $body-color;
+    }
+
+    .apexcharts-canvas {
+        margin: 0 auto;
+    }
+
+    .apexcharts-title-text {
+        fill: $headings-color;
+    }
+}
+
+
+.apexcharts-bar-series {
+    path {
+        stroke: $border-color;
+    }
+}
+
+.apexcharts-gridline {
+    pointer-events: none;
+    stroke: var(--#{$prefix}gray-200);
+}
+
+.apexcharts-legend-text {
+    color: $text-muted  !important;
+}
+
+
+
+.apexcharts-grid-row {
+    fill: $input-bg;
+}
+
+
+.apexcharts-pie-area {
+    stroke: $border-color;
+}
+
+.apexcharts-tracks {
+    .apexcharts-radialbar-track {
+        path {
+            stroke: var(--#{$prefix}gray-200);
+        }
+    }
+}
+
+.apexcharts-tooltip-title,
+.apexcharts-tooltip-text {
+    font-family: $font-family-base  !important;
+}
+
+.apexcharts-tooltip {
+    background-color: $card-bg  !important;
+    box-shadow: $box-shadow  !important;
+
+    * {
+        font-family: $font-family-base  !important;
+        color: var(--#{$prefix}gray-600)  !important;
+    }
+
+    .apexcharts-tooltip-title {
+        background-color: rgba(var(--#{$prefix}light-rgb), .75) !important;
+        border-bottom: 1px solid $border-color  !important;
+    }
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark {
+    * {
+        color: $white  !important;
+    }
+}
+
+.apexcharts-legend-series {
+    font-weight: $font-weight-medium;
+}
+
+.apexcharts-gridline {
+    pointer-events: none;
+    stroke: rgba(var(--#{$prefix}light-rgb), .75);
+}
+
+.apexcharts-legend-text {
+    color: var(--#{$prefix}gray-600)  !important;
+    font-family: $font-family-base  !important;
+    font-size: 13px !important;
+}
+
+.apexcharts-title-text,
+.apexcharts-subtitle-text {
+    fill: var(--#{$prefix}gray-500);
+}
+
+.apexcharts-yaxis,
+.apexcharts-xaxis {
+    text {
+        font-family: $font-family-base  !important;
+        fill: var(--#{$prefix}gray-500);
+    }
+    line {
+        stroke: var(--#{$prefix}gray-300);
+    }
+}
+
+.apexcharts-yaxis-title {
+    font-weight: 500;
+}
+
+.apexcharts-datalabels-group {
+    text {
+        fill: var(--#{$prefix}body-color) !important;
+    }
+}

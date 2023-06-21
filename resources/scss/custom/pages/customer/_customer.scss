@@ -1,0 +1,223 @@
+// Error text with shadow
+
+
+#customer-layout-2 {
+    font-family: 'Satoshi', sans-serif;
+
+    .content-page {
+        margin-top: 0;
+        //
+        //margin-left: 0;
+        //margin-right: 0;
+        padding: 0 12px 0 12px !important;
+    }
+
+    #topbar {
+        .top-banner {
+            background: var(--#{$prefix}gray-300);
+            font-size: 14px !important;
+            justify-content: space-between;
+            padding: 8px 12px;
+
+        }
+
+        .banner {
+            @extend .d-flex, .border-bottom;
+            padding: 20px 12px;
+            justify-content: space-between;
+            align-items: center;
+
+            .account {
+                line-height: 0;
+            }
+
+            .icon {
+                color: var(--#{$prefix}gray-800);
+            }
+
+            .address-bar {
+                @extend .border, .rounded, .d-flex, .align-items-center;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .input-search {
+                @extend .border-0, .bg-transparent;
+                max-width: 128px;
+
+                &:focus,
+                &:focus-visible {
+                    box-shadow: none !important;
+                    outline: 0;
+                }
+
+            }
+        }
+
+
+    }
+
+
+
+
+    .single-category {
+        @extend .px-2, .py-1-5, .cursor-pointer;
+        transition: 0.4s all ease-in-out;
+
+        &:hover {
+            background: var(--#{$prefix}gray-400);
+        }
+
+    }
+
+    .hr-muted {
+        opacity: 0.75;
+        border-color: var(--#{$prefix}gray-300);
+    }
+
+    .card-recommended {
+        @extend .rounded;
+        overflow: hidden;
+
+        &:before {
+            overflow: hidden;
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(118, 166, 255, 0.4) url("/assets/images/other/recommended_you.png") no-repeat;
+        }
+    }
+
+    .card-shop {
+        @extend .rounded;
+        overflow: hidden;
+
+        &:before {
+            overflow: hidden;
+
+            content: "";
+            position: absolute;
+            //opacity: 0.3;
+            //inset: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(246, 178, 141, 0.4) url("/assets/images/other/popular_shops.png") no-repeat;
+        }
+    }
+
+    #search-page {
+        .search-filter-wrapper {
+            position: absolute;
+            top: 2.5rem;
+            z-index: 1;
+            display: none;
+        }
+    }
+
+}
+
+@include media-breakpoint-up(md) {
+    #customer-layout, #customer-layout-2 {
+        .content-page {
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0 24px 0 24px !important;
+
+        }
+
+        #search-page{
+            .search-filter-wrapper{
+                display: block;
+                position: sticky;
+                top: 6rem;
+            }
+        }
+
+        #topbar {
+
+
+            .banner {
+
+                .input-search {
+                    min-width: 150px;
+                }
+            }
+
+
+        }
+    }
+
+
+}
+
+@include media-breakpoint-up(lg) {
+    #customer-layout, #customer-layout-2 {
+        .content-page {
+            margin-left: 48px;
+            margin-right: 48px;
+        }
+
+        #topbar {
+            .top-banner {
+                padding: 8px 42px;
+            }
+
+            .banner {
+                padding: 20px 42px;
+
+                .input-search {
+                    min-width: 180px;
+                }
+            }
+
+
+        }
+    }
+}
+
+
+@include media-breakpoint-up(xl) {
+    #customer-layout, #customer-layout-2 {
+
+        #topbar {
+
+            .banner {
+
+                .input-search {
+                    min-width: 220px;
+                }
+            }
+
+
+        }
+    }
+}
+
+@include media-breakpoint-up(xxl) {
+    #customer-layout, #customer-layout-2 {
+        .content-page {
+            margin-left: 120px;
+            margin-right: 120px;
+        }
+
+        #topbar {
+            .top-banner {
+                padding: 8px 70px;
+            }
+
+            .banner {
+                padding: 20px 70px;
+
+                .input-search {
+                    min-width: 280px;
+                }
+            }
+
+
+        }
+    }
+}
+
+

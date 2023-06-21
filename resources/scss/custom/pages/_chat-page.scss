@@ -1,0 +1,78 @@
+
+#chat-page {
+    position: relative;
+
+    .single-chat {
+        @extend .border-bottom, .p-2, .px-2-5, .d-flex, .align-items-center, .cursor-pointer;
+
+        &:hover {
+            background: var(--#{$prefix}light);
+        }
+
+        &.active {
+            background: var(--#{$prefix}light);
+        }
+    }
+
+    .load-more-message-wrapper {
+        position: absolute;
+        top: 4px;
+        display: flex;
+        justify-content: center;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .load-more-message {
+        @extend .fw-medium, .rounded, .bg-soft-primary, .p-0-5, .px-2, .cursor-pointer, .d-inline-flex, .align-items-center;
+        opacity: 0.4;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .chat-list-wrapper {
+        position: absolute;
+        top: 2.5rem;
+        z-index: 1;
+        display: none;
+    }
+
+    .chat-width {
+        max-width: 240px;
+    }
+
+}
+
+@include media-breakpoint-up(lg) {
+    #chat-page {
+        .chat-list-wrapper {
+            display: block;
+            position: sticky;
+            top: 6rem;
+        }
+    }
+}
+
+
+@include media-breakpoint-up(lg) {
+    #chat-page {
+
+        .chat-width {
+            max-width: 270px;
+        }
+
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    #chat-page {
+
+        .chat-width {
+            max-width: 400px;
+        }
+    }
+}

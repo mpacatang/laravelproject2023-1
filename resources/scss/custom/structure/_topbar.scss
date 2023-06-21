@@ -1,0 +1,265 @@
+//
+// topbar.scss
+//
+
+.navbar-custom {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all .3s ease-out;
+    min-height: $topbar-height;
+    background-color: $topbar-bg;
+    padding: 0 $spacer * 0.5;
+    border-bottom: 1px solid var(--#{$prefix}border-color);
+
+    .navbar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .topbar-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: $topbar-height;
+
+            .topbar-button {
+                font-size: 22px;
+                height: 42px;
+                width: 42px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: transparent;
+                transition: all 0.2s ease-in-out;
+                position: relative;
+                color: $topbar-item;
+                line-height: $topbar-height;
+
+                .topbar-item-icon-badge {
+                    font-size: 11px;
+                    position: absolute;
+                    top: 2px;
+                    right: 4px;
+                }
+
+                //&.show:not(.hover-none),
+                //&.active:not(.hover-none),
+                //&:hover:not(.hover-none),
+                //&:focus:not(.hover-none) {
+                //    color: $primary;
+                //    background-color: rgba($primary, 0.2);
+                //}
+            }
+        }
+    }
+
+    .topbar-logo{
+        height: $topbar-height;
+    }
+}
+
+
+// Topbar Search from
+.app-search {
+    position: relative;
+    color: $topbar-item;
+
+    .form-control {
+        border: none;
+        height: $input-height;
+        padding: 0 40px;
+        box-shadow: none;
+        color: $topbar-item;
+        background-color: $topbar-search-bg;
+    }
+
+    span.search-icon {
+        position: absolute;
+        font-size: 20px;
+        line-height: 38px;
+        left: 10px;
+        top: 0;
+
+        z-index: 5;
+    }
+
+    .input-group-text {
+        margin-left: 0;
+        z-index: 4;
+    }
+
+    .dropdown-menu {
+        z-index: 1060;
+    }
+
+    .search-widget-icon-close {
+        position: absolute;
+        z-index: 5;
+        font-size: 18px;
+        line-height: 42px;
+        top: 50%;
+        color: $topbar-item;
+        transform: translateY(-50%);
+        cursor: pointer;
+        right: 14px;
+        left: auto !important;
+    }
+}
+
+.nav-user {
+    text-align: left !important;
+    position: relative;
+    min-height: $topbar-height;
+    transition: none;
+    display: flex;
+    align-items: center;
+
+    .account-user-avatar {
+        position: absolute;
+        top: calc(#{$topbar-height - 32px} * 0.5);
+        left: 15px;
+
+        img {
+            height: 32px;
+            width: 32px;
+        }
+    }
+
+    .account-position {
+        display: block;
+        font-size: 12px;
+        margin-top: -3px;
+    }
+
+    .account-user-name {
+        display: block;
+        font-weight: $font-weight-semibold;
+    }
+}
+
+
+
+//  Topbar Menu Toggle button
+.button-toggle-menu {
+    display: block;
+    border: none;
+    color: $topbar-item;
+    height: $topbar-height;
+    line-height: $topbar-height;
+    width: 60px;
+    background-color: transparent;
+    font-size: 24px;
+    cursor: pointer;
+    float: left;
+    z-index: 1;
+    position: relative;
+
+    &:hover {
+        color: $topbar-item-hover;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin: 0 !important;
+    }
+}
+
+
+
+// Detached Left sidebar
+html[data-layout-mode="detached"] {
+    .navbar-custom {
+        padding: 0;
+
+        .logo-box {
+            width: auto;
+            padding-left: 20px;
+        }
+    }
+
+    .navbar-header {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+
+    .button-toggle-menu {
+        display: block;
+    }
+}
+
+
+// Logo
+html[data-topbar-color="dark"] {
+    .logo-box {
+        .logo-light {
+            display: inline-block;
+        }
+
+        .logo-dark {
+            display: none;
+        }
+    }
+}
+
+
+@include media-breakpoint-down(sm) {
+    .navbar-custom {
+        .topbar-menu {
+            position: initial;
+        }
+
+        .dropdown {
+            position: static;
+
+            .dropdown-menu {
+                left: 10px !important;
+                right: 10px !important;
+            }
+        }
+
+        .logo-box {
+
+            .logo-lg {
+                display: none;
+            }
+
+            .logo-sm {
+                display: inline-block;
+            }
+        }
+    }
+
+
+
+}
+
+
+@include media-breakpoint-down(md) {
+    .navbar-custom {
+        left: 0 !important;
+        padding: 0;
+    }
+}
+
+
+@include media-breakpoint-down(lg) {
+    .nav-user {
+        padding: 17px 5px 17px 57px !important;
+
+        .account-position,
+        .account-user-name {
+            display: none;
+        }
+    }
+}
+
+
+@include media-breakpoint-down(xl) {
+    .navbar-custom {
+        right: 0;
+    }
+}

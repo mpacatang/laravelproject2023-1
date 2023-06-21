@@ -1,0 +1,76 @@
+//
+// footer.scss
+//
+//
+.footer {
+    border-top: 1px solid rgba($gray-600, 0.2);
+    bottom: 0;
+    padding: 19px 24px 20px;
+    position: absolute;
+    right: 0;
+    color: var(--#{$prefix}gray-600);
+
+    left: 0;
+    transition: $transition-base;
+
+    .footer-links {
+        a {
+            color: var(--#{$prefix}gray-600);
+            margin-left: 1.5rem;
+            transition: all .4s;
+
+            &:hover {
+                color: var(--#{$prefix}gray-600);
+            }
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+// Used for account authentication pages
+.footer-alt {
+    left: 0;
+    border: none;
+    text-align: center;
+}
+
+
+
+footer#footer {
+
+    background-color: #323a46;
+
+
+    .foot-subscribe {
+        display: flex;
+        align-items: center;
+        background: rgba($gray-100, 0.1) !important;
+        border-radius: 0.25em;
+        padding: 6px;
+
+        .form-control {
+            background-color: transparent;
+            border: 0 !important;
+            color: $light !important;
+            // padding: 10px 20px;
+        }
+
+        .form-control:focus {
+            background-color: transparent;
+            box-shadow: none !important;
+        }
+    }
+
+    .footer-link {
+        color: $light;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            text-decoration: underline;
+            color: $primary;
+        }
+    }
+}
